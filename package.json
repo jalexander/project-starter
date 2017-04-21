@@ -4,7 +4,7 @@
   "description": "A starter kit for Javascript projects",
   "scripts": {
     "prestart": "babel-node internals/message.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node internals/devServer.js",
     "lint": "esw webpack.config.* src internals --color",
     "lint:watch": "npm run lint -- --watch",
@@ -13,7 +13,9 @@
     "share": "npm-run-all --parallel open:src localtunnel",
     "test": "mocha --reporter progress internals/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
-    "generate-mock-data": "babel-node internals/generateMockData"
+    "generate-mock-data": "babel-node internals/generateMockData",
+    "prestart-mock-data": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,7 @@
     "html-webpack-plugin": "^2.28.0",
     "jsdom": "^9.12.0",
     "json-schema-faker": "0.3.6",
+    "json-server": "^0.9.6",
     "localtunnel": "^1.8.2",
     "mocha": "^3.2.0",
     "nock": "^9.0.13",
