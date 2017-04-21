@@ -57,6 +57,7 @@ app.get('/art', function(req, res) {
       "location": "Amsterdam Museum"
     },
     {
+      "id": uuid(),
       "year": 1665,
       "title": "Girl with a Pearl Earring by Johannes Vermeer",
       "lat": 52.0804205,
