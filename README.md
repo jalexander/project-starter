@@ -14,3 +14,4 @@ Includes:
 * TravisCI for CI on Linux
 * Appveyor for CI on Windows
 * fetch for API requests
+* json-schema-faker for mock database
