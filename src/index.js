@@ -1,6 +1,6 @@
 import './index.css';
 
-import { getArt } from './api/artApi'
+import { getArt, deleteArt } from './api/artApi'
 
 // populate table of art from API
 getArt().then(result => {
@@ -19,4 +19,16 @@ getArt().then(result => {
   });
 
   global.document.getElementById('art').innerHTML = artBody;
+
+  const deleteLinks = global.document.getElementsByClassName('deleteArt');
+
+  Array.from(deleteLinks, link => {
+    link.onclick = function(event) {
+      const element = event.target;
+      event.preventDefault();
+      deleteArt(element.attributes["data-id"].value);
+      const row = element.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    };
+  });
 });

@@ -1,1 +1,20 @@
-{"art":[{"id":38466973,"year":"539","title":"Central Branding Designer","lat":82.2012,"lon":-112.8244,"location":"Schambergerfurt"},{"id":76455007,"year":"207","title":"District Paradigm Supervisor","lat":-32.3376,"lon":64.5131,"location":"Gonzalotown"},{"id":12055972,"year":"149","title":"Forward Configuration Executive","lat":-60.0701,"lon":157.7886,"location":"Davidville"}]}
+{
+  "art": [
+    {
+      "id": 38466973,
+      "year": "539",
+      "title": "Central Branding Designer",
+      "lat": 82.2012,
+      "lon": -112.8244,
+      "location": "Schambergerfurt"
+    },
+    {
+      "id": 76455007,
+      "year": "207",
+      "title": "District Paradigm Supervisor",
+      "lat": -32.3376,
+      "lon": 64.5131,
+      "location": "Gonzalotown"
+    }
+  ]
+}
