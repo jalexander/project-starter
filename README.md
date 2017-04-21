@@ -11,3 +11,6 @@ Includes:
 * webpack for bundling
 * eslint runs on save
 * unit tests run on save
+* TravisCI for CI on Linux
+* Appveyor for CI on Windows
+* fetch for API requests

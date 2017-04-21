@@ -9,13 +9,16 @@ describe('first test', () => {
 })
 
 describe('index.html', () => {
+  const index = fs.readFileSync('./src/index.html', 'utf-8');
   it('should say dev server is running', (done) => {
-    const index = fs.readFileSync('./src/index.html', "utf-8");
-    jsdom.env(index, function(err, window) {
-      done();
-      const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML.to.equal("dev server is running"));
-      window.close();
+    jsdom.env({
+      html: index,
+      done: function(err, window) {
+        const h1 = window.document.getElementsByTagName('h1')[0];
+        expect(h1.innerHTML).to.equal("Art");
+        window.close();
+        done();
+      }
     });
   })
 })
