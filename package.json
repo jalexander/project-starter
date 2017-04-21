@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A starter kit for Javascript projects",
   "scripts": {
-    "prestart": "node internals/message.js",
+    "prestart": "babel-node internals/message.js",
     "start": "npm-run-all --parallel security-check open:src",
-    "open:src": "node internals/devServer.js",
+    "open:src": "babel-node internals/devServer.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
