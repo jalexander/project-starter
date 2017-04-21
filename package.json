@@ -4,11 +4,15 @@
   "description": "A starter kit for Javascript projects",
   "scripts": {
     "prestart": "babel-node internals/message.js",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node internals/devServer.js",
+    "lint": "esw webpack.config.* src internals --color",
+    "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "test": "mocha --reporter progress internals/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -34,6 +38,7 @@
     "chalk": "^1.1.3",
     "cheerio": "^0.22.0",
     "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-watch": "^3.1.0",
@@ -48,6 +53,7 @@
     "numeral": "^2.0.6",
     "open": "^0.0.5",
     "rimraf": "^2.6.1",
+    "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0",

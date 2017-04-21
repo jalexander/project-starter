@@ -7,3 +7,7 @@ Includes:
 * express for development webserver
 * localtunnel for sharing work-in-progress
 * npm scripts for automation
+* babel for transpiling
+* webpack for bundling
+* eslint runs on save
+* unit tests run on save
