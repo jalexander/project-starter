@@ -4,7 +4,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
   devtool: 'inline-source-map',
   entry: './src/index.js',
-  target: 'web',
   output: {
     path: path.resolve(__dirname, 'src'),
     publicPath: '/',

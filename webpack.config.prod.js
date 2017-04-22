@@ -13,7 +13,6 @@ export default {
       vendor: path.resolve(__dirname, 'src/vendor'),
       main: path.resolve(__dirname, 'src/index')
   },
-  target: 'web',
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
