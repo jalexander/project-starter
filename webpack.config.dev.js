@@ -22,7 +22,10 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+        },
       },
       {
         test: /\.css$/,
