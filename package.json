@@ -16,10 +16,10 @@
     "generate-mock-data": "babel-node internals/generateMockData",
     "prestart-mock-data": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
-    "clean-dist": "rimraf ./dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist test lint",
+    "clean-build": "rimraf ./build && mkdir build",
+    "prebuild": "npm-run-all clean-build test lint",
     "build": "babel-node internals/build.js",
-    "postbuild": "babel-node internals/distServer.js"
+    "postbuild": "babel-node internals/buildServer.js"
   },
   "repository": {
     "type": "git",

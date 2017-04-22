@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash';
 
 export default {
   devtool: 'source-map',
@@ -10,11 +11,14 @@ export default {
   },
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js'
   },
   plugins: [
+    // hash the files using MD5 so that their names change when the content changes
+    new WebpackMd5Hash(),
+
     // create a separate bundle of vendor libraries
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
