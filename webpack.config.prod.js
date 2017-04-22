@@ -47,7 +47,9 @@ export default {
     }),
 
     // minify js
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true
+    })
   ],
   module: {
     rules: [
