@@ -15,3 +15,6 @@ Includes:
 * Appveyor for CI on Windows
 * fetch for API requests
 * json-schema-faker for mock database
+* optional TrackJS error logging
+* API hosted on Heroku
+* UI hosted on Surge
