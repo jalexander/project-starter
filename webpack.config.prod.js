@@ -5,6 +5,7 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const devtool = 'source-map'
+const isSourceMap = devtool.indexOf('sourcemap') >= 0 || devtool.indexOf('source-map') >= 0
 
 export default {
   devtool,
@@ -50,7 +51,7 @@ export default {
 
     // minify js
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
+      sourceMap: isSourceMap
     })
   ],
   module: {
@@ -67,7 +68,7 @@ export default {
           use: {
             loader: 'css-loader',
             options: {
-              sourceMap: devtool && (devtool.indexOf('sourcemap') >= 0 || devtool.indexOf('source-map') >= 0)
+              sourceMap: isSourceMap
             }
           }
         })
