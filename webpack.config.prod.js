@@ -4,8 +4,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
+const devtool = 'source-map'
+
 export default {
-  devtool: 'source-map',
+  devtool,
   entry: {
       vendor: path.resolve(__dirname, 'src/vendor'),
       main: path.resolve(__dirname, 'src/index')
@@ -57,9 +59,6 @@ export default {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          babelrc: false,
-        },
       },
       {
         test: /\.css$/,
@@ -68,7 +67,7 @@ export default {
           use: {
             loader: 'css-loader',
             options: {
-              sourceMap: true
+              sourceMap: devtool && (devtool.indexOf('sourcemap') >= 0 || devtool.indexOf('source-map') >= 0)
             }
           }
         })
