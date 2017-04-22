@@ -11,10 +11,10 @@ const port = 3000;
 const app = express();
 
 app.use(compression());
-app.use(express.static('dist'));
+app.use(express.static('build'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 app.get('/art', function(req, res) {
