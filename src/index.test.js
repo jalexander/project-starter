@@ -8,8 +8,8 @@ describe('first test', () => {
   })
 })
 
-describe('index.html', () => {
-  const index = fs.readFileSync('./src/index.html', 'utf-8');
+describe('index.ejs', () => {
+  const index = fs.readFileSync('./src/index.ejs', 'utf-8');
   it('should say dev server is running', (done) => {
     jsdom.env({
       html: index,

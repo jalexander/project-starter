@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- set trackJSToken in HtmlWebpackPlugin to add Trackjs to the production build -->
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+  <!-- BEGIN TRACKJS -->
+  <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
+  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  <!-- END TRACKJS -->
+  <% } %>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Art</h1>
+  <table>
+    <thead>
+      <th>&nbsp;</th>
+      <th>Id</th>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Location</th>
+    </thead>
+    <tbody id="art">
+
+    </tbody>
+  </table>
+</body>
+</html>
